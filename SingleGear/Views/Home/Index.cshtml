@@ -8,6 +8,31 @@
     <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
+
+
+
+<h3>Bikes</h3>
+<div ng-controller="mainController">
+    <table class="table table-striped">
+        <tr ng-repeat="bike in bikes">
+            <td>{{bike.FrameColour}}</td>       <!--  not sure about this line bike.bikeName??? -->
+            <td class="text-right">
+                <button class="btn btn-danger" ng-click="deleteBike(bike)">X</button>
+            </td>
+        </tr>
+    </table>
+
+    <input type="text" required ng-model="newBike" />
+    <a href="#" class="btn btn-primary" ng-click="addBike()">Add Bike</a>
+</div>
+
+
+
+
+
+
+
+
 <div class="row">
     <div class="col-md-4">
         <h2>Getting started</h2>

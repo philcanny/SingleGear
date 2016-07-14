@@ -13,6 +13,33 @@ namespace SingleGear.Controllers
             return View();
         }
 
+        public JsonResult GetBikes()
+        {
+            var db = new BikesEntities();
+            var bikes = db.Bikes.ToList();
+            return Json(bikes, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult AddBike(string newBike)
+        {
+            var db = new BikesEntities();
+            db.Bikes.Add(new Bike() { FrameColour = newBike });
+            db.SaveChanges();
+            var bikes = db.Bikes.ToList();
+            return Json(bikes, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public JsonResult DeleteBike(Bike delBike)
+        {
+            var db = new BikesEntities();
+            var bike = db.Bikes.Find(delBike.BikeId);
+            db.Bikes.Remove(bike);
+            db.SaveChanges();
+        }
+
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
