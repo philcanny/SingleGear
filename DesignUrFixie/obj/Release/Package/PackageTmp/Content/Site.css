@@ -1,0 +1,262 @@
+﻿/*  768px */
+
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+        .col-sm-3, .col-md-3, col-lg-3 {
+            margin-top: 10px;
+        }
+
+        .button {
+            cursor: pointer;
+            border: none;
+            color: white;   /* text colour */
+            padding: 5px 10px;
+            display: inline-block;
+            margin: 4px 4px;
+            /*    text-decoration: none; */
+        }
+        .button:hover {
+            color: black;   /* text colour */
+            /*background-color: darkgrey;*/
+            box-shadow: 0 12px 12px 0 rgba(0,0,0,0.25);
+        }
+        
+        .BF {
+            background-color: black;
+            width: 40px;
+            }
+        .RF {
+            background-color: red;
+            width: 40px;
+        }
+        .GF {
+            background-color: greenyellow;
+            color: black;   /* text colour */
+            width: 40px;
+        }
+        .Sub {
+            width: 100px;
+            height: 30px;
+            background-color: greenyellow;
+            float: right;
+        }
+         
+        .BikeHeight{
+            height: 440px;
+        } 
+       
+              
+        #GreyBike
+        {
+            position:absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;           
+        }
+        
+        #FrameImage, #SaddleImage, #HandlebarImage, #WheelsImage
+        {
+            position:absolute;
+            top: 0;
+            left: 20%;
+            right: 20%;
+        } 
+
+        #FormButton
+        {
+            position:absolute;
+            top:440px;
+            left:auto;    
+        }
+
+        .Create
+        {
+         display: block; 
+         
+        }
+        footer {
+        display: block;
+        }
+
+.jumbotron {
+    background-image: url('Images/bicycle.png');
+    background-size: cover;
+}
+.jumbotron h1,
+.jumbotron .h1 {
+  color: white;
+  border: 1px;
+  background-color: rgba(0,0,0,0.4);
+}
+a.navbar-brand  {     
+ background: url(/Content/Images/DURFLogo3.png) no-repeat top left;
+ display: block;     
+ width: 140px;       
+ height: 55px;       
+ text-indent: -9999px;  /*hides the link text*/ 
+  } 
+a.navbar-brand:hover {
+            background: url(/Content/Images/DURFLogo4.png) no-repeat top left;
+        }
+/* styling for divs on IndexGallery Page*/
+    .urlImage{
+        clear:both;
+        width: 16%;
+        margin-left: 42%; 
+        margin-right: 42%;
+    }
+    #GoDesign{
+        clear:both;
+    }
+@media (min-width: 992px) {
+          .CreateHeight{
+        height:875px;
+    }
+}
+
+@media (max-width: 991px) {
+      
+        #GreyBike, #FrameImage, #SaddleImage, #HandlebarImage, #WheelsImage
+        {
+            left: 10%;
+            right: 10%;
+        } 
+          .CreateHeight{
+        height:1000px;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    #GreyBike, #FrameImage, #SaddleImage, #HandlebarImage, #WheelsImage
+        {
+            left: 0%;
+            right: 0%;
+        } 
+    .col-sm-12 {
+        min-height: 440px;  /* block containing bike image minimum height so the footer does not disappear behide bike*/
+    }
+     #Slider{
+        height:440px;
+    }
+     .CreateHeight{
+        height:1000px;
+    }
+    
+}
+@media (max-width: 692px) {  /** Because of img-responsive, the footer is shifting on resize, this is to keep the footer in position*/
+    .CreateHeight{
+        height:1200px;
+    }
+}
+@media (max-width: 500px) {
+    .CreateHeight{
+        height:1200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .CreateHeight{
+        height:1200px;
+    }
+}
+@media (max-width: 320px) {
+    .CreateHeight{
+        height:1000px;
+    }
+}
+@media (max-width: 600px) {
+    #FormButton {
+        top: 370px;
+    }
+    #Slider{
+        height:400px;
+    }
+}
+@media (max-width: 500px) {
+    #FormButton{
+        top: 350px;
+    }
+    .col-sm-12 {
+        min-height: 290px;
+    }
+    #Slider{
+        height:310px;
+    }
+    
+     .urlImage{
+        top:500px;
+        clear:both;
+        width: 60%;
+        margin-left: 20%; 
+        margin-right: 20%;
+    }
+}
+@media (max-width: 450px) {
+    #FormButton {
+        top: 270px;
+    }
+     #Slider{
+        height:270px;
+    }
+    .urlImage{
+        top:auto;
+        width: 60%;
+        margin-left: 20%; 
+        margin-right: 20%;
+    }
+}
+@media (max-width: 400px) {
+    .jumbotron {
+    margin-bottom: 2px;
+    }
+
+      #Slider{
+        height:210px;
+    }
+    .urlImage{
+        top:auto;
+        width: 60%;
+        margin-left: 20%; 
+        margin-right: 20%;
+    }
+}
+@media (max-width: 350px) {
+    #FormButton {
+        top: 220px;
+    }
+
+    .col-sm-12 {
+        min-height: 200px;
+    }
+
+    .urlImage {
+        top: 200px;
+        width: 60%;
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
