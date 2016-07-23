@@ -41,7 +41,7 @@ namespace DesignUrFixie.Controllers
     }
 
         // GET: /Payment/
-
+        [HttpPost]
         public ActionResult Charge(string stripeToken, string stripeEmail)
         {
             string apiKey = "sk_test_3RiGWe2dnDwGiXGBS2F6iQ3m";
@@ -52,10 +52,9 @@ namespace DesignUrFixie.Controllers
             if (response.IsError == false && response.Paid)
             {
                 // success
+                //return RedirectToAction("Index", "Home");
             }
-
-            return View("Charge");
-
+            return View("Index");  //whatever, was Payment, and Charge
         }
        
 
