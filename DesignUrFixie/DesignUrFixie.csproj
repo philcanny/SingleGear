@@ -276,6 +276,7 @@
     <Content Include="Content\Images\RedHandlebar.png" />
     <Content Include="Content\Images\RedSaddle.png" />
     <Content Include="Content\Images\RedWheels.png" />
+    <Content Include="Content\Images\Wheel.png" />
     <Content Include="Content\TestImages\arrowleft.png" />
     <Content Include="Content\TestImages\arrowright.png" />
     <Content Include="Content\TestImages\img1.png" />
