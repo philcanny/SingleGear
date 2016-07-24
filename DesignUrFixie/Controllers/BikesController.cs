@@ -56,7 +56,7 @@ namespace DesignUrFixie.Controllers
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "BikeId,BikeName,FrameColour,SaddleColour,HandlebarColour,WheelColour")] Bike bike)
+        public ActionResult Create([Bind(Include = "BikeId,CustomerName,FrameColour,SaddleColour,HandlebarColour,WheelColour")] Bike bike)
         {
             if (ModelState.IsValid)
             {
@@ -91,7 +91,7 @@ namespace DesignUrFixie.Controllers
         //[Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "BikeId,BikeName,FrameColour,SaddleColour,HandlebarColour,WheelColour")] Bike bike)
+        public ActionResult Edit([Bind(Include = "BikeId,CustomerName,FrameColour,SaddleColour,HandlebarColour,WheelColour")] Bike bike)
         {
             if (ModelState.IsValid)
             {

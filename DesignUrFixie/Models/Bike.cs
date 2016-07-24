@@ -12,7 +12,7 @@ namespace DesignUrFixie.Models
     {
         public int BikeId { get; set; }
         [Required]
-        public string BikeName { get; set; }
+        public string CustomerName { get; set; }
         [Required]
         public string FrameColour { get; set; }
         [Required]

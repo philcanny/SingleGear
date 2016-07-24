@@ -72,13 +72,11 @@
                 @Html.TextBoxFor(model => model.AddressCity, new { id = "txtCity" })
             </div>
         </div>
-            <div class="col-md-offset-2 col-md-2">
-            <p>
-                @Html.HiddenFor(model => model.Token, new { id = "hdnToken" })
-                @Html.ActionLink("ProcessPayment", "Charge", null, new { id = "btnCharge" })
-            </p>
-            </div>
-        </div>
+        <p>
+            @Html.HiddenFor(model => model.Token, new { id = "hdnToken" })
+            @Html.ActionLink("ProcessPayment", "Charge", null, new { id = "btnCharge" })
+        </p>
+    </div>
 }
 
 @section Scripts {
