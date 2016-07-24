@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using DesignUrFixie.Models;
 using Stripe;
+using System.Threading.Tasks;
 
 namespace DesignUrFixie.Controllers
 {
@@ -40,23 +41,7 @@ namespace DesignUrFixie.Controllers
                    
     }
 
-        // GET: /Payment/
-        [HttpPost]
-        public ActionResult Charge(string stripeToken, string stripeEmail)
-        {
-            string apiKey = "sk_test_3RiGWe2dnDwGiXGBS2F6iQ3m";
-            var stripeClient = new DesignUrFixie.StripeClient(apiKey);
 
-            dynamic response = stripeClient.CreateChargeWithToken(52500, stripeToken, "EUR", stripeEmail);
-
-            if (response.IsError == false && response.Paid)
-            {
-                // success
-                //return RedirectToAction("Index", "Home");
-            }
-            return View("Index");  //whatever, was Payment, and Charge
-        }
-       
 
         // GET: Bikes/Create
         //[AllowAnonymous]
@@ -153,5 +138,57 @@ namespace DesignUrFixie.Controllers
             }
             base.Dispose(disposing);
         }
+
+
+
+        // STRIPE CODE //
+
+        public ActionResult Charge()
+        {
+
+            ViewBag.Message = "Charge what you like";
+
+            return View(new StripeChargeModel());
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<ActionResult> Charge(StripeChargeModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var chargeId = await ProcessPayment(model);
+            return RedirectToAction("Result", "Home"); ;
+        }
+
+
+        private async Task<string> ProcessPayment(StripeChargeModel model)
+        {
+            return await Task.Run(() =>
+            {
+                var myCharge = new StripeChargeCreateOptions
+                {
+                    // convert the amount of €525.00 to pennies i.e. 52500  removed int from line below and added 525
+                    Amount = (int)(model.Amount * 100),
+                    Currency = "eur",
+                    Description = "Description for test charge",
+                    Source = new StripeSourceOptions
+                    {
+                        TokenId = model.Token
+                    }
+                };
+
+                var chargeService = new StripeChargeService("sk_test_3RiGWe2dnDwGiXGBS2F6iQ3m");
+                var stripeCharge = chargeService.Create(myCharge);
+
+                return stripeCharge.Id;
+            });
+        }
+
+
     }
 }

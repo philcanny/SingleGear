@@ -20,7 +20,7 @@
 
     <div class="form-group">
 
-        <label for="txtCvc" class="control-label col-md-2">CVC *</label>
+        <label for="txtCvc" class="control-label col-md-2">Cvc *</label>
         <div class="col-md-10">
             <input type="text" name="Cvc" id="txtCvc" placeholder="Security Code e.g 987" />
         </div>
@@ -44,9 +44,9 @@
 </div>
 
 <!-- Change ViewName in line below to match the view folder name where the charge view resides-->
-@using (Html.BeginForm("Charge", "Bikes", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "frmCharge" }))
+@using (Html.BeginForm("Charge", "ViewName", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", id = "frmCharge" }))
 {
-    @Html.AntiForgeryToken()
+@Html.AntiForgeryToken()
     <div class="form-horizontal">
         <div class="form-group">
             @Html.LabelFor(model => model.CardHolderName, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -83,7 +83,7 @@
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
         $('document').ready(function () {
-            Stripe.setPublishableKey('pk_test_An5BWj2xsp8M8ebFFyqHEEha');
+            Stripe.setPublishableKey('pk_test_CNxpNrBE5O2u5mVsVVMoYtao');
 
             $('#btnCharge').on('click', function (e) {
                 e.preventDefault();

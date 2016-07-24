@@ -11,17 +11,8 @@
         <h2>Do you wish to order this Bike?</h2>
         <h3>Make a Stripe Payment</h3>
         <div>
-            <form action="@Url.Action("Result","Home")" method="POST">
-                <!-- was Charger changed to Index, Home-->
-                <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="pk_test_An5BWj2xsp8M8ebFFyqHEEha"
-                        data-image=""
-                        data-name="Design-Ur Fixie"
-                        data-description=""
-                        data-currency="EUR"
-                        data-amount="52500">
-                </script>
-            </form>
+           @Html.ActionLink("Pay with Stripe", "Charge", null, new { @class = "btn btn-default" })
+
         </div>
     </div>
 
