@@ -18,14 +18,14 @@ namespace DesignUrFixie.Controllers
         private MyDbContext db = new MyDbContext();   //create an instance of the DataContext class in our DB
 
         // GET: Bikes
-        //[Authorize]
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.Bikes.ToList());
         }
 
         // GET: Bikes/Details/5
-        //[Authorize]
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,7 +44,7 @@ namespace DesignUrFixie.Controllers
 
 
         // GET: Bikes/Create
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public ActionResult Create()
         {
             return View();
@@ -70,7 +70,7 @@ namespace DesignUrFixie.Controllers
         }
 
         // GET: Bikes/Edit/5
-        //[Authorize]
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,7 +88,7 @@ namespace DesignUrFixie.Controllers
         // POST: Bikes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        //[Authorize]
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BikeId,CustomerName,FrameColour,SaddleColour,HandlebarColour,WheelColour")] Bike bike)
@@ -103,7 +103,7 @@ namespace DesignUrFixie.Controllers
         }
 
         // GET: Bikes/Delete/5
-        //[Authorize]
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -119,7 +119,7 @@ namespace DesignUrFixie.Controllers
         }
 
         // POST: Bikes/Delete/5
-        //[Authorize]
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
